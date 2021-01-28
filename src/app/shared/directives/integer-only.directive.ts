@@ -1,0 +1,48 @@
+import { Directive, HostListener } from '@angular/core';
+
+@Directive({
+  selector: '[IntegerOnly]'
+})
+export class IntegerOnlyDirective {
+
+  constructor() { }
+
+  private navigationKeys = [
+    'Backspace',
+    'Delete',
+    'Escape',
+    'Enter',
+    'Home',
+    'End',
+    'ArrowLeft',
+    'ArrowRight',
+    'Clear',
+    'Copy',
+    'Paste',
+  ];
+  @HostListener('keydown', ['$event'])
+  keyDownEvent(e: KeyboardEvent) {
+    //     if (event.key.length === 1 && (event.which < 48 || event.which > 57)) {
+    //         event.preventDefault();
+    //     }
+    if (
+      // Allow: Delete, Backspace, Escape, Enter, etc
+      this.navigationKeys.indexOf(e.key) > -1 ||
+      (e.key === 'a' && e.ctrlKey === true) || // Allow: Ctrl+A
+      (e.key === 'c' && e.ctrlKey === true) || // Allow: Ctrl+C
+      (e.key === 'v' && e.ctrlKey === true) || // Allow: Ctrl+V
+      (e.key === 'x' && e.ctrlKey === true) || // Allow: Ctrl+X
+      (e.key === 'a' && e.metaKey === true) || // Cmd+A (Mac)
+      (e.key === 'c' && e.metaKey === true) || // Cmd+C (Mac)
+      (e.key === 'v' && e.metaKey === true) || // Cmd+V (Mac)
+      (e.key === 'x' && e.metaKey === true) // Cmd+X (Mac)
+    ) {
+      return;  // let it happen, don't do anything
+    }
+    // Ensure that it is a number and stop the keypress
+    if (e.key === ' ' || isNaN(Number(e.key))) {
+      e.preventDefault();
+    }
+  }
+
+}

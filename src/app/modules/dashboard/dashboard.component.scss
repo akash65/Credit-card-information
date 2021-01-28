@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+@media only screen and (max-width: 700px) {
+    .test {
+      font-size: 12px;
+      width: 100% !important;
+    }
+  }
+
+  @media only screen and (min-width:500px) and(max-width: 800px) {
+    .header-text {
+      font-size: 15px;
+    }
+  }
+
+//   th {
+//       font-size: 15px;
+//   }
+h4 {
+    color: white;
+}
+
+.main {
+    width: 50%;
+    margin: 0px auto;
+}
+
+.icon-style {
+    width: 60px;
+    background-color: purple;
+}
+
+// .title-color {
+//     color: #203647;
+// }
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 5px 0;
+  border-radius: 15px;
+  text-align: center !important;
+  font-size: 15px;
+  line-height: 1.42857;
+}
+
+// .lock:hover .fa-credit-card:before {
+//   content: "\f055";
+// }
+
+// .fa-credit-card:hover {
+//   // color: #006b33;
+//   content: "\f055";
+// }
+.btn-add-icon {
+  font-size: 10px;
+}
+
+.eyeIcon {
+  top: 17px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.data-border {
+  border: none;
+}
+
+.card-header {
+  padding: 0px !important;
+}
+
+.add-icon {
+  position: absolute;
+  /* margin: -15px; */
+  padding: 0rem;
+  overflow: auto;
+  margin-top: -12px;
+  margin-bottom: 15px;
+  margin-left: 2px;
+}
+
+.card-icon {
+  position: absolute;
+    margin-bottom: 6px;
+    padding: 0rem;
+    margin-top: -4px;
+    margin-left: -10px;
+}

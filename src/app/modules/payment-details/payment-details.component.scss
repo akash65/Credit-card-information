@@ -1,0 +1,29 @@
+h3 {
+    color: purple;
+}
+
+@media screen and (max-width: 600px) {
+    .pay {
+        font-size: 12px;
+        width: 100% !important;
+    }
+
+    h3, label {
+        font-size: 12px;
+    }
+}
+
+.error-msg {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: #dc3545;
+}
+
+.card-title {
+    color: #a64495;
+}
+
+.col-form-label {
+    color: #a64495;
+}

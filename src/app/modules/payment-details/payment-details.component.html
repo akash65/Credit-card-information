@@ -1,0 +1,89 @@
+<!-- <p>payment-details works!</p> -->
+<div class="container card mt-3 payment w-50">
+    <div class="card-header ">
+        <h3 class="card-title">Add Card Details</h3>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+            <div class="input-group mb-3 row">
+                <label class="col-sm-6 col-form-label">Credit Card Number:</label>
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="las la-credit-card"></i></span>
+                </div>
+                <input type="text" formControlName="creditCardNo" id="creditCardNumber" name="creditCardNumber"
+                    autocomplete="off" placeholder="Credit Card Number" class="form-control col-sm-6">
+                <div class="error-msg text-right"
+                    *ngIf=" isSubmitBtn || (paymentForm.controls['creditCardNo'].dirty ||paymentForm.controls['creditCardNo'].touched || paymentForm.controls['creditCardNo'].invalid)">
+                    <span *ngIf="isSubmitBtn && paymentFormCtrl.creditCardNo.errors?.required">Card
+                        number is
+                        required</span>
+                </div>
+            </div>
+            <div class="input-group mb-3 row">
+                <label class="col-sm-6 col-form-label">Card Holder:</label>
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="las la-id-card"></i></span>
+                </div>
+                <input type="text" class="form-control col-sm-6" formControlName="cardHolder" id="cardHold"
+                    autocomplete="off" name="cardHold" placeholder="Card Holder">
+                <div class="error-msg text-right"
+                    *ngIf=" isSubmitBtn || (paymentForm.controls['cardHolder'].dirty ||paymentForm.controls['cardHolder'].touched || paymentForm.controls['cardHolder'].invalid)">
+                    <span *ngIf="isSubmitBtn && paymentFormCtrl.cardHolder.errors?.required">Name is
+                        required</span>
+                </div>
+            </div>
+            <div class="input-group mb-3 row">
+                <label class="col-sm-6 col-form-label">Expiration Date:</label>
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="las la-calendar"></i></span>
+                </div>
+                <input type="date" class="form-control col-sm-6" formControlName="expirationDate" id="expDate"
+                    name="expDate" placeholder="Expiration Date" min="2021-01-25">
+                <div class="error-msg text-right"
+                    *ngIf=" isSubmitBtn || (paymentForm.controls['expirationDate'].dirty ||paymentForm.controls['expirationDate'].touched || paymentForm.controls['expirationDate'].invalid)">
+                    <span *ngIf="isSubmitBtn && paymentFormCtrl.expirationDate.errors?.required">Expire Date is
+                        required</span>
+                </div>
+            </div>
+            <div class="input-group mb-3 row">
+                <label class="col-sm-6 col-form-label">Security Code:</label>
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="las la-key"></i></span>
+                </div>
+                <input type="text" class="form-control col-sm-6" formControlName="securityCode" id="secureCode"
+                    autocomplete="off" IntegerOnly name="secureCode" placeholder="Secure Code">
+                <div class="error-msg text-right"
+                    *ngIf=" isSubmitBtn || (paymentForm.controls['securityCode'].dirty ||paymentForm.controls['securityCode'].touched || paymentForm.controls['securityCode'].invalid)">
+                    <span
+                        *ngIf="paymentFormCtrl.securityCode.errors?.minlength || paymentFormCtrl.securityCode.errors?.maxlength">Code
+                        must be 3
+                        digit only</span>
+                </div>
+            </div>
+            <div class="input-group mb-3 row">
+                <label class="col-sm-6 col-form-label">Amount:</label>
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="las la-rupee-sign"></i></span>
+                </div>
+                <input type="text" class="form-control col-sm-6" formControlName="amount" id="amt" name="amt"
+                    autocomplete="off" IntegerOnly placeholder="Amount">
+                <div class="error-msg text-right"
+                    *ngIf=" isSubmitBtn || (paymentForm.controls['amount'].dirty ||paymentForm.controls['amount'].touched || paymentForm.controls['amount'].invalid)">
+                    <span *ngIf="isSubmitBtn && paymentFormCtrl.amount.errors?.required">Amount is
+                        required</span>
+                </div>
+                <div class="error-msg text-right"
+                    *ngIf=" isSubmitBtn || (paymentForm.controls['amount'].dirty ||paymentForm.controls['amount'].touched || paymentForm.controls['amount'].invalid)">
+                    <span *ngIf="isSubmitBtn && paymentFormCtrl.amount.errors?.min">Amount should be
+                        greater than 0</span>
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <button type="button" class="btn btn-outline-secondary mr-3" (click)="onResetForm()">Cancel</button>
+                <button type="submit" class="btn btn-outline-primary">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
