@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from '@modules/dashboard/dashboard.component';
 import { HomeComponent } from './home.component';
 
 const hroutes: Routes = [
@@ -14,6 +15,11 @@ const hroutes: Routes = [
       {
         path: 'payment-details',
         loadChildren: async () => (await import('@modules/payment-details/payment-details.module')).PaymentDetailsModule
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: '/dashboard'
       }
     ]
   },
