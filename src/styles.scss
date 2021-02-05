@@ -1,0 +1,45 @@
+  .toaster-container {
+    pointer-events: none;
+    position: fixed;
+    z-index: 999999;
+    top: 5%;
+    right: 0;
+    width: 60%;
+  }
+  
+  .toaster-container .toaster {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .toaster-container .toaster {
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 6px;
+    padding: 15px 15px 15px 50px;
+    width: 300px;
+    border-radius: 3px 3px 3px 3px;
+    background-position: 15px center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    -webkit-box-shadow: 0 0 12px #999999;
+    box-shadow: 0 0 12px #999999;
+    color: #ffffff;
+    font-size: 12px;
+  }
+  
+  .toaster-success {
+    background-color: #53a353;
+    background-image: url('assets/images/checked.webp');
+  }
+  
+  .toaster-failure {
+    background-color: #da313c;
+    background-image: url('assets/images/close.webp');
+  }
+  
+  .toaster-warning {
+    background-color: #ffcc00;
+    background-image: url('assets/images/close.webp');
+  }
